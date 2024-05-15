@@ -1,0 +1,153 @@
+---
+title: 'Lab: Exploring Data using IBM Cloud Gallery'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load Data
+
+```{r, message=FALSE, warning=FALSE}
+setwd("~/Documents/Coursera/CERT_IBM DSPC/IBM DSPC/01_WhatIsDataScience/0 - Data/")
+fire_raw <- read.csv("forest+fires/forestfires.csv")
+
+library(tidyverse) #ofc
+library(viridis) #better ggplot colors
+```
+
+# Take a Look at the Data
+```{r}
+head(fire_raw)
+```
+
+# Data Dictionary
+[source](https://archive.ics.uci.edu/dataset/162/forest+fires)
+
+| Variable | Definition |
+|:---:| --- |
+| X | x-axis spatial coordinate within the Montesinho park map: 1 to 9 |
+| Y | y-axis spatial coordinate within the Montesinho park map: 2 to 9 |
+| month | month of the year: "jan" to "dec"  |
+| day | day of the week: "mon" to "sun" |
+| FFMC | FFMC index from the FWI system: 18.7 to 96.20 |
+| DMC | DMC index from the FWI system: 1.1 to 291.3  |
+| DC | DC index from the FWI system: 7.9 to 860.6  |
+| ISI | ISI index from the FWI system: 0.0 to 56.10 |
+| temp| temperature in Celsius degrees: 2.2 to 33.30 |
+| RH | relative humidity in %: 15.0 to 100 |
+| wind | wind speed in km/h: 0.40 to 9.40 |
+| rain | outside rain in mm/m2 : 0.0 to 6.4 |
+| area | the burned area of the forest (in ha): 0.00 to 1090.84[^1] |
+
+[^1] : "this output variable is very skewed towards 0.0, thus it may make
+sense to model with the logarithm transform." 
+
+# EDA
+rather than going through all of the variables right now, let's just look at the first variable **FFMC**
+
+```{r}
+fire_raw %>% 
+  ggplot(aes(month, FFMC)) +
+  geom_point()
+```
+
+It seems the month value is text and we'd like to have the data be able to be ordered chronologically. 
+Let's clean this up a little:
+  
+  - store in new table to maintain integrity of original dataset 
+  - order the month data chronologically rather than alphabetically 
+  - use a violin graph to better communicate the density of the fine fuel moisture content data points 
+  - add some color to the graph
+
+```{r, warning=F}
+# month order
+monthChron <- c("jan",
+                "feb",
+                "mar",
+                "apr",
+                "may",
+                "jun",
+                "jul",
+                "aug",
+                "sep",
+                "oct",
+                "nov",
+                "dec")
+
+fire <- fire_raw # store changes in new table 'fire'
+
+fire %>%
+  mutate(month = fct_relevel(month, monthChron)) %>% # reorder months
+  ggplot(aes(
+    x = month,
+    y = FFMC,
+    fill = month)) +
+  geom_violin(position='dodge', alpha=0.5) + # violin graph
+  scale_fill_viridis(discrete=T, option="magma") + # magma colors
+  ylim(0,100) + # change y scale to reflect entire FWI FFMC index range
+  theme(legend.position = "none") # remove redundant legend showing month's colors
+```
+<div class='fluid-row'>
+
+<div class='col-md-12'>
+
+## Fine Fuel Moisture Code (FFMC)
+
+The Fine Fuel Moisture Code is a measure of how easily a fire could ignite and how fast it could spread.
+
+<div class='col-md-8'>
+
+There are six components:
+  
+  3 fuel moisture codes:
+    
+    1. litter and other fine fuels
+    2. loosely compacted organic layers of moderate depth
+    3. deep, compact organic layers
+  
+  3 are fire behavior indices:
+    
+    4. rate of fire spread
+    5. fuel available for combustion
+    6. frontal fire intensity
+
+</div>
+
+<div class='col-md-4'>
+
+| Rating | Danger |
+|:------:|:------:|
+| 0 - 80 | Low |
+| 81 - 87 | Moderate |
+| 88 - 90 | High |
+| 91 - 92 | Very High |
+| 93+ | Extreme |
+
+</div>
+
+</div>
+
+</div>
+
+## Conclusion
+unsurprisingly, the fine fuel moisture code is higher in the summer seasons where the danger rating stays mostly in the high to very high range
+
+contrary to the cool month of march, the danger level is just as high as june, july, and september. further analysis is needed to speculate why.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
