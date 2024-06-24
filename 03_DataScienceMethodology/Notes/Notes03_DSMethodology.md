@@ -52,7 +52,7 @@ stakeholders and users evaluate the model and contribute feedback to assess the 
 ## Terminology
 
 | Term | Definition |
-| --- | --- |
+|:---:| --- |
 | Analytic Approach | The process of selecting the appropriate method or path to address a specific data science question or problem. |
 | Analytics | 	The systematic analysis of data using statistical, mathematical, and computational techniques to uncover insights, patterns, and trends.
 | Business Understanding | 	The initial phase of data science methodology involves seeking clarification and understanding the goals, objectives, and requirements of a given task or problem.
