@@ -74,4 +74,4 @@ Jupyter's popularity stems from its flexibility and ease of use.
 - Jupyter has become an indispensable tool for researchers, analysts, and developers in data science.
 - Seamless integration with popular libraries such as NumPy, pandas, and sci-kit-learn makes it the go-to choice for data manipulation, analysis, and machine learning. 
 - Jupyter provides a user-friendly interface, interactive capabilities, and robust collaboration features
-- Jupyter empowers you to work more efficiently and share your insights with others.  
+- Jupyter empowers you to work more efficiently and share your insights with others.
