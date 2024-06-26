@@ -75,3 +75,12 @@ Jupyter's popularity stems from its flexibility and ease of use.
 - Seamless integration with popular libraries such as NumPy, pandas, and sci-kit-learn makes it the go-to choice for data manipulation, analysis, and machine learning. 
 - Jupyter provides a user-friendly interface, interactive capabilities, and robust collaboration features
 - Jupyter empowers you to work more efficiently and share your insights with others.
+
+## Data Types in Python
+
+| Value              | Data Type |
+|:---:               |:---:      |
+| 11                 | int       |
+| 21.213             | float     |
+| "Hello Python 101" | str       |
+| True               | bool      |
