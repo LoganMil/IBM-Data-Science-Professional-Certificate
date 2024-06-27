@@ -84,3 +84,20 @@ Jupyter's popularity stems from its flexibility and ease of use.
 | 21.213             | float     |
 | "Hello Python 101" | str       |
 | True               | bool      |
+
+## Expressions and Variables
+
+Expressions are *mathematical operations*
+
+**Expression**
+43+60+16+41
+
+43 = operand \
+'+'  = operator 
+
+ \
+Variables are used to *store values*
+
+**Variable**
+
+`my_variable = 1`
