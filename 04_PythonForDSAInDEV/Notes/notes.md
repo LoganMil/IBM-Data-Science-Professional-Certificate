@@ -101,3 +101,32 @@ Variables are used to *store values*
 **Variable**
 
 `my_variable = 1`
+
+## Strings
+
+**Intro** \
+A string is a sequence of characters contained between quotes, either double or single quotes \
+A string can be spaces or digits \
+A string can also be special characters
+
+**A Sequence** \
+It is helpful to think of a string as an *ordered sequence* \
+Each element in the sequence can be accessed by an *index*, or *numbered position* in the string, *starting at 0* or going in reverse where the last element of the string starts at -1
+
+**Combining Strings** \
+Strings can also be combined `Name[::2]` only grabs every other element in the string `Name` \
+Slicing is another tool we can use that looks like `Name[0:5:2]` where every other element is grabbed from element `0` to element `5`
+
+**`Len()`** \
+We can use `len(Name)` command to obtain the length of the string
+
+**Concatenation** \
+The action of combining strings with the addition `+` operator \
+```
+Name1 = 'Well, '
+Name2 = 'Actually'
+Name3 = Name1 + Name2
+Print(Name3)
+
+'Well, Actually'
+```
