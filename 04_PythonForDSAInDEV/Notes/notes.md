@@ -11,6 +11,24 @@
 - [Intro to Jupyter](#intro-to-jupyter)
     - [Why Jupyter?](#why-jupyter)
     - [Key Features of Jupyter](#key-features-of-jupyter)
+    - [Jupyter in Data Science](#jupyter-in-data-science)
+- [Data Types in Python](#data-types-in-python)
+- [Expressions and Variables](#expressions-and-variables)
+    - [Expression](#expression)
+    - [Variable](#variable)
+- [Strings](#strings)
+    - [Intro](#intro)
+    - [A Sequence](#a-sequence)
+    - [Combining Strings](#combining-strings)
+    - [`Len()`](#len)
+    - [Concatenation](#concatenation)
+- [Tuples and Lists](#tuples-and-lists)
+    - [Tuples](#tuples)
+    - [Lists](#lists)
+- [Dictionaries](#dictionaries)
+    - [keys](#keys)
+    - [values](#values)
+- [Sets](#sets)
 
 <!-- /TOC -->
 
@@ -89,7 +107,7 @@ Jupyter's popularity stems from its flexibility and ease of use.
 
 Expressions are *mathematical operations*
 
-**Expression**
+### Expression
 43+60+16+41
 
 43 = operand \
@@ -98,29 +116,29 @@ Expressions are *mathematical operations*
  \
 Variables are used to *store values*
 
-**Variable**
+### Variable
 
 `my_variable = 1`
 
 ## Strings
 
-**Intro** \
+### Intro 
 A string is a sequence of characters contained between quotes, either double or single quotes \
 A string can be spaces or digits \
 A string can also be special characters
 
-**A Sequence** \
+### A Sequence 
 It is helpful to think of a string as an *ordered sequence* \
 Each element in the sequence can be accessed by an *index*, or *numbered position* in the string, *starting at 0* or going in reverse where the last element of the string starts at -1
 
-**Combining Strings** \
+### Combining Strings
 Strings can also be combined `Name[::2]` only grabs every other element in the string `Name` \
 Slicing is another tool we can use that looks like `Name[0:5:2]` where every other element is grabbed from element `0` to element `5`
 
-**`Len()`** \
+### `Len()` 
 We can use `len(Name)` command to obtain the length of the string
 
-**Concatenation** \
+### Concatenation 
 The action of combining strings with the addition `+` operator \
 ```
 Name1 = 'Well, '
@@ -135,13 +153,13 @@ Print(Name3)
 ## Tuples and Lists
 >Tuples and Lists are considered *compound data types*
 
-**Tuples** \
+### Tuples
 an ordered sequence, written as comma-separated values between *parentheses* `()` \
 multiple type of variables can be contained withina tuple
 tuples are **immutable**, meaning they **cannot** be changed
 
 
-**Lists** \
+### Lists
 Also an ordered sequence, written as comma-separated values between *brackets* `[]` \
 multiple type of variables can be contained within a tuple
 lists are **mutable**, meaning they **can** be changed
@@ -154,8 +172,27 @@ Similar to lists, which have a `indexes` and `elements`, dictionaries have `keys
 dictionaries are denoted by curly brackets `{}` \
 `keys` must *immutable* and *unique*
 
-**keys** \
+### keys
 `keys` are an index but rather than being limited to numbers, `keys` are typically characters, making them a bit easier to remember
 
-**values** \
+### values
 `values` are similar to an element, in which they store information at a specific `key`
+
+
+## Sets
+
+### intro
+sets are a type of *collection*, similar to lists and tuples, you can input *different* python data types within a set \
+however, unline lists and tuples, **sets are unordered** meaning they *do not* record element positon \
+**sets only have unique elements** \
+sets are denoted by curly brackets `{}` like dictionaries but do not take a key \
+if duplicate items are put into a set, they will not be present past the initial entry
+
+### set operations
+| Operation | Action |
+|:---:| --- |
+| `.add` | add unique item to set |
+| `.remove` | remove item from set |
+| ` & ` | find intersection between two sets |
+| `.issubset` | check if a set is a subset of another set |
+
