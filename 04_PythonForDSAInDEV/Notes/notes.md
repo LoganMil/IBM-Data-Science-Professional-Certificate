@@ -29,6 +29,12 @@
     - [keys](#keys)
     - [values](#values)
 - [Sets](#sets)
+    - [intro](#intro)
+    - [set operations](#set-operations)
+- [Conditons and Branching](#conditons-and-branching)
+    - [Comparison operators](#comparison-operators)
+    - [Branching](#branching)
+    - [Logic operators](#logic-operators)
 
 <!-- /TOC -->
 
@@ -226,3 +232,34 @@ if duplicate items are put into a set, they will not be present past the initial
 | `not(False)` | if statement is *not false*, returns `True` |
 | `or` | if either value 1 *or* value 2 is true, returns `True` |
 | `and` | if value 1 *and* value 2 are true, returns `True` |
+
+
+## Loops
+
+### Loop Functions
+| Function | Action |
+|:---:| --- |
+| `range(N)` | outputs ordered sequence as a list `i` |
+
+### For Loops
+loops repeat a task `n` number of times
+
+```python
+squares = ["red", "yellow", "green", "purple", "blue"]
+
+for color in range(0,5):
+    squares[color] = "white"
+```
+
+### While Loops
+loops repeat a task until some condition is met
+
+```python
+squares = ["orange", "orange", "purple", "orange", "blue"]
+Newsquares = []
+i = 0
+
+while(squares[i]=="orange"):
+    Newsquares.append(squares[i])
+    i=i+1
+```
