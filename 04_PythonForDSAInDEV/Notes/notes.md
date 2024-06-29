@@ -198,3 +198,31 @@ if duplicate items are put into a set, they will not be present past the initial
 | `.issuperset()` | check if the set is a superset of another set, used if set 2 is entirely present in set 1 |
 | `.difference()` | find the difference between two sets |
 | `.union()` | find the common elements between two sets |
+
+
+## Conditons and Branching
+
+### Comparison operators
+| Operator | Action |
+|:---:| --- |
+| `==` | returns `true` or `false` if two values are equal to each other |
+| `>` | returns `true` or `false` if value 1 is *greater than* value 2 |
+| `>=` | returns `true` or `false` if value 1 is *greater than or equal to* value 2 |
+| `<` | returns `true` or `false` if value 1 is *less than* value 2 |
+| `<=` | returns `true` or `false` if value 1 is *less than or equal to* value 2 |
+| `!=` | returns `true` or `false` if value 1 is *not equal to* value 2 |
+
+### Branching
+| Statement | Action |
+|:---:| --- |
+| `if (statement): {task}` | if the statement returns `true`, the `if` task will run, otherwise the task will be skipped |
+| `if (statement): {task} else: {task}` | if the statement returns `true`, the `if` task will run, otherwise the task state for `else` will be run |
+| `elif {task}` | continuation of `if (statement): {task} else {task}` but the following statements will continue to be run if the previous statement is not met |
+
+### Logic operators
+| Operator | Action |
+|:---:| --- |
+| `not(True)` | if statement is *not true*, returns `True` |
+| `not(False)` | if statement is *not false*, returns `True` |
+| `or` | if either value 1 *or* value 2 is true, returns `True` |
+| `and` | if value 1 *and* value 2 are true, returns `True` |
