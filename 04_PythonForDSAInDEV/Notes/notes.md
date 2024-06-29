@@ -131,5 +131,18 @@ Print(Name3)
 'Well, Actually'
 ```
 
-**String sequences**
+
+## Tuples and Lists
+>Tuples and Lists are considered *compound data types*
+
+**Tuples** \
+an ordered sequence, written as comma-separated values between *parentheses* `()` \
+multiple type of variables can be contained withina tuple
+tuples are **immutable**, meaning they **cannot** be changed
+
+
+**Lists** \
+Also an ordered sequence, written as comma-separated values between *brackets* `[]` \
+multiple type of variables can be contained within a tuple
+lists are **mutable**, meaning they **can** be changed
 
