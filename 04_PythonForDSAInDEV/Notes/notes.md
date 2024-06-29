@@ -130,3 +130,6 @@ Print(Name3)
 
 'Well, Actually'
 ```
+
+**String sequences**
+
