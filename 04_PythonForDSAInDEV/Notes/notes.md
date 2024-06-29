@@ -191,8 +191,10 @@ if duplicate items are put into a set, they will not be present past the initial
 ### set operations
 | Operation | Action |
 |:---:| --- |
-| `.add` | add unique item to set |
-| `.remove` | remove item from set |
-| ` & ` | find intersection between two sets |
-| `.issubset` | check if a set is a subset of another set |
-
+| `.add()` | add unique item to set |
+| `.remove()` | remove item from set |
+| ` & ` or `.intersection`() | find intersection between two sets |
+| `.issubset()` | check if a set is a subset of another set, used if set 1 is entirely present in set 2 |
+| `.issuperset()` | check if the set is a superset of another set, used if set 2 is entirely present in set 1 |
+| `.difference()` | find the difference between two sets |
+| `.union()` | find the common elements between two sets |
