@@ -147,3 +147,15 @@ multiple type of variables can be contained within a tuple
 lists are **mutable**, meaning they **can** be changed
 
 For a list or tuple `a` we can use `help(a)` for a list of all methods available to use
+
+
+## Dictionaries
+Similar to lists, which have a `indexes` and `elements`, dictionaries have `keys` and `values` \
+dictionaries are denoted by curly brackets `{}` \
+`keys` must *immutable* and *unique*
+
+**keys** \
+`keys` are an index but rather than being limited to numbers, `keys` are typically characters, making them a bit easier to remember
+
+**values** \
+`values` are similar to an element, in which they store information at a specific `key`
