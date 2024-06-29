@@ -146,3 +146,4 @@ Also an ordered sequence, written as comma-separated values between *brackets* `
 multiple type of variables can be contained within a tuple
 lists are **mutable**, meaning they **can** be changed
 
+For a list or tuple `a` we can use `help(a)` for a list of all methods available to use
