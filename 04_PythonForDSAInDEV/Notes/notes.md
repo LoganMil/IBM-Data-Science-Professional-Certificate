@@ -286,3 +286,49 @@ common types of errors
 - `IndexError` - trying to access data from an index in a list that doesn't exist \
 [here's a list of more errors that are built into python](https://docs.python.org/3/library/exceptions.html)
 
+
+## Objects and Classes
+
+Python has a lot of data types
+- `integers`
+- `floats`
+- `strings`
+- `lists`
+- `dictionaries`
+
+Each of those data types is an `object`.
+
+Every `object` has;
+- A **type**
+- An internal data representation (*a blueprint*)
+- A set of procedures for interacting with the object (*method*)
+
+An `object` is an **instance** of a particular **type**
+
+### How to create a class
+```python
+# create a class for a circle
+class Circle(object):
+    def __init__(self, radius, color):
+        self.radius = radius
+        self.color = color
+
+# create an object of the class Circle
+RedCircle = Circle(10,"red")
+```
+
+### Methods
+**functions** that interact or change the attributes of an object
+
+```python
+# once again, create the Circle class
+class Cirlce(object):
+    def __init__(self, radius, color):
+        self.radius = radius
+        self.color = color
+    # now add the method that will allow us to change the radius of an object created from this class.
+    def add_radius(self, r):
+        self.radius = self.radius + r
+```
+
+use `dir()` to get a list of the attributes and methods associated with a class
