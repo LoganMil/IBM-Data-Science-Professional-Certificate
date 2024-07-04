@@ -263,3 +263,18 @@ while(squares[i]=="orange"):
     Newsquares.append(squares[i])
     i=i+1
 ```
+
+
+## Exception Handling
+
+### try...except
+```python
+try:
+    ... #initial action youre attempting to perform
+except:
+    ... #what to do if unable to perform task
+else:
+    ... #what to do after successful attempt
+finally:
+    ... #what to do after everything, regardless of success or failure
+```
