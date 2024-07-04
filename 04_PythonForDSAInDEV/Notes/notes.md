@@ -278,3 +278,11 @@ else:
 finally:
     ... #what to do after everything, regardless of success or failure
 ```
+
+common types of errors
+
+- `ZeroDivisonError` - error when dividing by zero
+- `NameError` - trying to use a variable that hasn't been defined
+- `IndexError` - trying to access data from an index in a list that doesn't exist \
+[here's a list of more errors that are built into python](https://docs.python.org/3/library/exceptions.html)
+
