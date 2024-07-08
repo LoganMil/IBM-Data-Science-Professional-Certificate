@@ -35,10 +35,23 @@
     - [Comparison operators](#comparison-operators)
     - [Branching](#branching)
     - [Logic operators](#logic-operators)
+- [Loops](#loops)
+    - [Loop Functions](#loop-functions)
+    - [For Loops](#for-loops)
+    - [While Loops](#while-loops)
+- [Exception Handling](#exception-handling)
+    - [try...except](#tryexcept)
+- [Objects and Classes](#objects-and-classes)
+    - [How to create a class](#how-to-create-a-class)
+    - [Methods](#methods)
+- [Reading and Writing Files with `Open()`](#reading-and-writing-files-with-open)
+    - [`open()` modes](#open-modes)
+    - [`open()` methods](#open-methods)
+    - [`with` statement (best practice)](#with-statement-best-practice)
 
 <!-- /TOC -->
 
-## 1. Course Overview
+## Course Overview
 | Module | Content
 | --- | --- |
 | 1 - Python Basics | About the Course<br> Types<br> Expressions<br> Variables<br> String Operations |
@@ -47,23 +60,23 @@
 | 4 - Working with Data in Python | Reading and Writing Files with Open<br> Pandas<br> Numpy |
 | 5 - APIs and Data Collection | Simple APIs<br> REST APIs, Web Scraping, and Working with Files<br> Final Exam |
 
-## 2. Intro to Python
+## Intro to Python
 
-### 2.1. Identify the Users of Python
+### Identify the Users of Python
 - People who already know how to program
 - People who want to learn how to program
 - Over 80% of DS pros worldwide
 - Areas liek DS, AI, ML, Web Dev, IoT devices (Raspberry Pi)
 - Large Orgs (IBM, Wikipedia, Google, Yahoo!, CERN, etc)
 
-### 2.2. Benefits of Python
+### Benefits of Python
 - General purpose language
 - Large standard library
 - DS Libraries: Pandas, NumPy, SciPy, Matplotlib
 - AI Libraries: TensorFlow, PyTorch, Keras, Scikit-Learn
 - NLP Library: Natural Language Toolkit (NLTK)
 
-### 2.3. Describe the diversity and inclusion efforts of the Python community
+### Describe the diversity and inclusion efforts of the Python community
 >**Our Community**
 >
 >Members of the Python community are **open**, **considerate**, and **respectful**. Behaviours that reinforce these values contribute to a positive environment, and include:
@@ -78,14 +91,14 @@
 >- **Gracefully accepting constructive criticism**. When we disagree, we are courteous in raising our issues.
 >- **Using welcoming and inclusive language**. We're accepting of all who wish to take part in our activities, fostering an environment where anyone can participate and everyone can make a difference.
 
-## 3. Intro to Jupyter
+## Intro to Jupyter
 
 >Jupyter is a freely available web application that enables creation and sharing of documents containing **equations**, **live coding**, **visualizations**, and **narrative text**. Jupyter provides an **interactive computing environment** that supports multiple programming languages, including Python, R, Julia, and more, but it shines brightest when used with Python.  Jupyter revolves around **notebooks**, documents containing a mix of code, visualizations, narrative text, equations, and multimedia content. These notebooks allow users to create, share, and collaborate on computational projects seamlessly.
 
-### 3.1. Why Jupyter?
+### Why Jupyter?
 Jupyter's popularity stems from its flexibility and ease of use.
 
-### 3.2. Key Features of Jupyter
+### Key Features of Jupyter
 
 - Interactive Computing
 - Support for Multiple Languages
@@ -93,14 +106,14 @@ Jupyter's popularity stems from its flexibility and ease of use.
 - Integration with Data Science Libraries
 - Collaboration and Sharing
 
-### 3.3. Jupyter in Data Science
+### Jupyter in Data Science
 
 - Jupyter has become an indispensable tool for researchers, analysts, and developers in data science.
 - Seamless integration with popular libraries such as NumPy, pandas, and sci-kit-learn makes it the go-to choice for data manipulation, analysis, and machine learning. 
 - Jupyter provides a user-friendly interface, interactive capabilities, and robust collaboration features
 - Jupyter empowers you to work more efficiently and share your insights with others.
 
-## 4. Data Types in Python
+## Data Types in Python
 
 | Value              | Data Type |
 |:---:               |:---:      |
@@ -109,11 +122,11 @@ Jupyter's popularity stems from its flexibility and ease of use.
 | "Hello Python 101" | str       |
 | True               | bool      |
 
-## 5. Expressions and Variables
+## Expressions and Variables
 
 Expressions are *mathematical operations*
 
-### 5.1. Expression
+### Expression
 43+60+16+41
 
 43 = operand \
@@ -122,29 +135,29 @@ Expressions are *mathematical operations*
  \
 Variables are used to *store values*
 
-### 5.2. Variable
+### Variable
 
 `my_variable = 1`
 
-## 6. Strings
+## Strings
 
-### 6.1. Intro
+### Intro
 A string is a sequence of characters contained between quotes, either double or single quotes \
 A string can be spaces or digits \
 A string can also be special characters
 
-### 6.2. A Sequence
+### A Sequence
 It is helpful to think of a string as an *ordered sequence* \
 Each element in the sequence can be accessed by an *index*, or *numbered position* in the string, *starting at 0* or going in reverse where the last element of the string starts at -1
 
-### 6.3. Combining Strings
+### Combining Strings
 Strings can also be combined `Name[::2]` only grabs every other element in the string `Name` \
 Slicing is another tool we can use that looks like `Name[0:5:2]` where every other element is grabbed from element `0` to element `5`
 
-### 6.4. `Len()`
+### `Len()`
 We can use `len(Name)` command to obtain the length of the string
 
-### 6.5. Concatenation
+### Concatenation
 The action of combining strings with the addition `+` operator \
 ```
 Name1 = 'Well, '
@@ -156,16 +169,16 @@ Print(Name3)
 ```
 
 
-## 7. Tuples and Lists
+## Tuples and Lists
 >Tuples and Lists are considered *compound data types*
 
-### 7.1. Tuples
+### Tuples
 an ordered sequence, written as comma-separated values between *parentheses* `()` \
 multiple type of variables can be contained withina tuple
 tuples are **immutable**, meaning they **cannot** be changed
 
 
-### 7.2. Lists
+### Lists
 Also an ordered sequence, written as comma-separated values between *brackets* `[]` \
 multiple type of variables can be contained within a tuple
 lists are **mutable**, meaning they **can** be changed
@@ -173,28 +186,28 @@ lists are **mutable**, meaning they **can** be changed
 For a list or tuple `a` we can use `help(a)` for a list of all methods available to use
 
 
-## 8. Dictionaries
+## Dictionaries
 Similar to lists, which have a `indexes` and `elements`, dictionaries have `keys` and `values` \
 dictionaries are denoted by curly brackets `{}` \
 `keys` must *immutable* and *unique*
 
-### 8.1. keys
+### keys
 `keys` are an index but rather than being limited to numbers, `keys` are typically characters, making them a bit easier to remember
 
-### 8.2. values
+### values
 `values` are similar to an element, in which they store information at a specific `key`
 
 
-## 9. Sets
+## Sets
 
-### 9.1. intro
+### intro
 sets are a type of *collection*, similar to lists and tuples, you can input *different* python data types within a set \
 however, unline lists and tuples, **sets are unordered** meaning they *do not* record element positon \
 **sets only have unique elements** \
 sets are denoted by curly brackets `{}` like dictionaries but do not take a key \
 if duplicate items are put into a set, they will not be present past the initial entry
 
-### 9.2. set operations
+### set operations
 | Operation | Action |
 |:---:| --- |
 | `.add()` | add unique item to set |
@@ -206,9 +219,9 @@ if duplicate items are put into a set, they will not be present past the initial
 | `.union()` | find the common elements between two sets |
 
 
-## 10. Conditons and Branching
+## Conditons and Branching
 
-### 10.1. Comparison operators
+### Comparison operators
 | Operator | Action |
 |:---:| --- |
 | `==` | returns `true` or `false` if two values are equal to each other |
@@ -218,14 +231,14 @@ if duplicate items are put into a set, they will not be present past the initial
 | `<=` | returns `true` or `false` if value 1 is *less than or equal to* value 2 |
 | `!=` | returns `true` or `false` if value 1 is *not equal to* value 2 |
 
-### 10.2. Branching
+### Branching
 | Statement | Action |
 |:---:| --- |
 | `if (statement): {task}` | if the statement returns `true`, the `if` task will run, otherwise the task will be skipped |
 | `if (statement): {task} else: {task}` | if the statement returns `true`, the `if` task will run, otherwise the task state for `else` will be run |
 | `elif {task}` | continuation of `if (statement): {task} else {task}` but the following statements will continue to be run if the previous statement is not met |
 
-### 10.3. Logic operators
+### Logic operators
 | Operator | Action |
 |:---:| --- |
 | `not(True)` | if statement is *not true*, returns `True` |
@@ -234,14 +247,14 @@ if duplicate items are put into a set, they will not be present past the initial
 | `and` | if value 1 *and* value 2 are true, returns `True` |
 
 
-## 11. Loops
+## Loops
 
-### 11.1. Loop Functions
+### Loop Functions
 | Function | Action |
 |:---:| --- |
 | `range(N)` | outputs ordered sequence as a list `i` |
 
-### 11.2. For Loops
+### For Loops
 loops repeat a task `n` number of times
 
 ```python
@@ -251,7 +264,7 @@ for color in range(0,5):
     squares[color] = "white"
 ```
 
-### 11.3. While Loops
+### While Loops
 loops repeat a task until some condition is met
 
 ```python
@@ -265,9 +278,9 @@ while(squares[i]=="orange"):
 ```
 
 
-## 12. Exception Handling
+## Exception Handling
 
-### 12.1. try...except
+### try...except
 ```python
 try:
     ... #initial action youre attempting to perform
@@ -287,7 +300,7 @@ common types of errors
 [here's a list of more errors that are built into python](https://docs.python.org/3/library/exceptions.html)
 
 
-## 13. Objects and Classes
+## Objects and Classes
 
 Python has a lot of data types
 - `integers`
@@ -305,7 +318,7 @@ Every `object` has;
 
 An `object` is an **instance** of a particular **type**
 
-### 13.1. How to create a class
+### How to create a class
 ```python
 # create a class for a circle
 class Circle(object):
@@ -317,7 +330,7 @@ class Circle(object):
 RedCircle = Circle(10,"red")
 ```
 
-### 13.2. Methods
+### Methods
 **functions** that interact or change the attributes of an object
 
 ```python
@@ -332,3 +345,32 @@ class Cirlce(object):
 ```
 
 use `dir()` to get a list of the attributes and methods associated with a class
+
+## Reading and Writing Files with `Open()`
+
+```python
+file_object = open('file path', 'mode') # syntax
+file1 = open('/resources/data/Example.txt','r') # example
+```
+### `open()` modes
+| symbol | mode |
+|:---:| --- |
+| `r` | reading |
+| `w` | writing |
+| `a` | appending |
+
+### `open()` methods
+| method | action |
+|:---:| --- |
+| `.name` | print path to file being read |
+| `.mode` | print mode being used |
+| `.close` | close the object file **(best practice)** |
+
+### `with` statement (best practice)
+```python
+with open('Example1.txt', 'r') as file1:
+    file_stuff = file1.read()
+    PRINT(file_stuff)
+print(file1.closed)
+print(file_stuff)
+```
