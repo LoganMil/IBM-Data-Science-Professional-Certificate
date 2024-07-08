@@ -348,8 +348,8 @@ use `dir()` to get a list of the attributes and methods associated with a class
 
 ## Reading and Writing Files with `Open()`
 
+### `R`eading a file with `open()`
 ```python
-file_object = open('file path', 'mode') # syntax
 file1 = open('/resources/data/Example.txt','r') # example
 ```
 ### `open()` modes
@@ -366,11 +366,51 @@ file1 = open('/resources/data/Example.txt','r') # example
 | `.mode` | print mode being used |
 | `.close` | close the object file **(best practice)** |
 
-### `with` statement (best practice)
+### `R`eading using `with` statement (best practice)
 ```python
-with open('Example1.txt', 'r') as file1:
+with open('Example1.txt', 'r') as file1: # uses open() function, saves to file file1 
     file_stuff = file1.read()
-    PRINT(file_stuff)
-print(file1.closed)
-print(file_stuff)
+    PRINT(file_stuff) # after last line in `with` statement is run, file is closed, freeing up resources
+print(file1.closed) # check to see if file1 file is still open
+print(file_stuff) # the contents can still be accessed after file is closed
 ```
+
+### `W`riting a file with `open()`
+```python
+file1 = open('/resources/data/Example2.txt', 'w') # example
+```
+
+### `W`riting using `with` statement (best practice)
+```python
+with open('/resources/data/Example2.txt', 'w') as file1: # note method is now 'w'
+    file1.write("This is line A\n")
+    file1.write("This is line B\n")
+```
+
+### `W`riting to file efficiently using a list
+
+>Using `write` method will overwrite any existing file with the same path and name
+
+```python
+Lines = ['This is line A\n', 'This is line B\n', 'This is line C\n'] # a list with text we want to add to file1
+
+with open('resources/data/Example2.txt','w') as file1: # open file1 with method w (write)
+    for line in Lines: # iterate the below code through each 'line' in 'Lines' list
+        file1.write(line) # uses method .write of object file1 on the current index of line
+```
+
+### `A`ppending a file with `open()`
+
+>Using `append` method will add on to exising file with same path and file name
+
+```python
+with open('/resources/data/Example2.txt','a') as file1:
+    file1.write('This is line C')
+```
+
+### Copying one file to a new file
+```python
+with open('Example1.txt', 'r') as readfile: # opens Example1.txt and stores it in object readfile
+    with open('Example3.txt', 'w') as writefile: # opens Example3.txt and stores it in obejct writefile
+        for line in readfile: # iterates the below lines of code until all lines have been gone through
+            writefile.write(line) # uses method .write() of writefile object on the current index of line
