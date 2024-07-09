@@ -437,6 +437,9 @@ df = pandas.read_csv(csv_path)
 ```
 
 ## Dataframes (df) in Pandas
+
+[Pandas Documentation](https://pandas.pydata.org/docs/index.html) - pandas.pydata.org/docs/index.html
+
 ```python
 csv_path='file1.csv' # save file path to a variable
 df=pd.read_csv(csv_path) # save the dataframe csv file to a variable
@@ -470,3 +473,10 @@ df.iloc[0,'val1'] # you can also use column headers instead of numbers
 
 df.iloc['a','val1'] # by default, rows are integers, but if specify otherwise, you can still use .iloc[]
 ```
+
+### Methods and practices
+| Syntax | Description
+|:---:| --- |
+| `df['col_name'].unique()` | returns a list of unique values within the specified column |
+| `df['col_name']>value` | returns list of booloean values for each row in the specified column that is greater than value specified (< also works) <br> a new `df` can be created from this operator with `df1=df[df['col_name']>value]` |
+| `df1.to_csv('new_file_name.csv')` | saves `df` to new csv file |
