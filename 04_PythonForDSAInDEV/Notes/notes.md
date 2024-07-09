@@ -414,3 +414,59 @@ with open('Example1.txt', 'r') as readfile: # opens Example1.txt and stores it i
     with open('Example3.txt', 'w') as writefile: # opens Example3.txt and stores it in obejct writefile
         for line in readfile: # iterates the below lines of code until all lines have been gone through
             writefile.write(line) # uses method .write() of writefile object on the current index of line
+```
+
+
+## Pandas
+>A popular library for **Data Analysis**
+
+### Getting Started With Pandas
+
+#### Load Pandas library
+```python
+import Pandas as pd
+```
+The line of code above does **2 things**
+1. loads the `Pandas` library, giving us access to all of its functions and classes
+1. enables us to reference `Pandas` as `pd` so that we don't have to type *Pandas* entirely, every time we want to call it
+
+#### Load a file into Pandas
+```python
+csv_path = 'file1.csv'
+df = pandas.read_csv(csv_path)
+```
+
+## Dataframes (df) in Pandas
+```python
+csv_path='file1.csv' # save file path to a variable
+df=pd.read_csv(csv_path) # save the dataframe csv file to a variable
+df.head() # show the first 5 lines (w/headers) of our dataframe we just saved
+```
+### Dictionary into df
+You can create a dataframe out of a dictionary
+```python
+# dictionary
+dictionary = {'key1':['val1', 'val2', 'val3'],
+              'key2':['val1', 'val2', 'val3'],
+              'key3':['val1', 'val2', 'val3']}
+
+# use .dataframe() method with the dictionary as the argument
+frame_from_dict = pd.DataFrame(songs)
+```
+1. **keys** are the column labels
+1. **values** are lists corresponding to the rows
+
+### Create df from columns of another df
+You can create a df from one or more column in another df
+```python
+y=df[['val2']]
+```
+
+### iloc method (access a specific 'cell' in the df)
+```python
+df.iloc[0,0] # [row, column] indexed at 0, not 1
+
+df.iloc[0,'val1'] # you can also use column headers instead of numbers
+
+df.iloc['a','val1'] # by default, rows are integers, but if specify otherwise, you can still use .iloc[]
+```
