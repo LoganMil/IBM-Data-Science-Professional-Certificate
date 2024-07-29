@@ -3,11 +3,16 @@ Lab 0603 INSERT, UPDATE, DELETE
 
 <!-- TOC tocDepth:1..3 chapterDepth:2..6 -->
 
-- [Task A: Example Questions](#task-a-example-questions)
+- [`INSERT`](#insert)
+    - [Task A: Example Questions on `INSERT`](#task-a-example-questions-on-insert)
+    - [Task B: Practice Examples on `INSERT`](#task-b-practice-examples-on-insert)
+- [`UPDATE`](#update)
+    - [Example Exercises on `UPDATE`](#example-exercises-on-update)
 
 <!-- /TOC -->
 
-# Task A: Example Questions
+# `INSERT`
+## Task A: Example Exercises on `INSERT`
 Let us go through some examples of INSERT related queries:
 
 1. In this example, suppose we want to insert a new single row into the Instructor table.
@@ -47,7 +52,7 @@ Let us go through some examples of INSERT related queries:
     SELECT * FROM Instructor;
     ```
 
-# Task B: Practice Exercises on `INSERT`
+## Task B: Practice Examples on `INSERT`
 Now, let us practice creating and running some INSERT related queries.
 
 1. Insert a new instructor record with id 7 for Antonio Cangiano who lives in Vancouver, CA into the "Instructor" table.
@@ -62,3 +67,6 @@ Now, let us practice creating and running some INSERT related queries.
    ...> (8, 'Ryan', 'Steve', 'Barlby', 'GB'),
    ...> (9, 'Sannareddy', 'Ramesh', 'Hyderabad', 'IN');
     ```
+
+# `UPDATE`
+## Example Exercises on `UPDATE`
