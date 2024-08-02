@@ -9,10 +9,9 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "mysql_learners",
-            "database": "Mysql_Learners",
-            "username": "root",
-            "askForPassword": true
+            "name": "MultiTableQueries",
+            "database": "hr",
+            "username": "root"
         }
     ]
 }
